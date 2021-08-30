@@ -1,0 +1,15 @@
+Messageing manager WOrker
+Does the actual work for sending messages.  Uses the "broadcast message"
+to do the broadcast of the message.
+
+SubscriberActivityReportSender
+Aggregates and sends a report hourly or daily vai email on the activity
+of subscribers
+
+"TParty" = "Third Party"
+TpartyScheduleMessageSender
+Checks if there is anything pending
+If so, it sends it.
+Sees if a channel needs to run.. on the channel, it is the thing that
+does the work.
+

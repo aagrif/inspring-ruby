@@ -1,0 +1,38 @@
+- channel_model_class = Channel
+
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-md-8
+         = "Channels (#{@channels.count})"
+      .col-md-4.pull-right.text-right
+         = link_to new_channel_path, class: "btn btn-primary btn-xs"
+           span.glyphicon.glyphicon-plus
+
+  .panel-body
+    - if @channels && @channels.count > 0
+      table.table.table-striped#channels_table
+        thead
+          th= channel_model_class.human_attribute_name(:name)
+          th
+        tbody
+          - @channels.each do |channel|
+            tr id="channel_#{channel.id}"
+              td= link_to channel.name, channel_path(channel)
+              td.text-right.pull-right
+                = link_to t(".edit", default: t("helpers.links.edit")),
+                          edit_channel_path(channel),
+                          class: "btn btn-default btn-xs"
+      .row
+        .col-md-12.text-center
+          = will_paginate @channels, param_name: "channels_page"
+
+    - else
+      .notification-well.text-center
+        .icon
+          span.glyphicon.glyphicon-plus
+        .message
+          h4 No Channels
+          p No channels configured
+          .new
+            = link_to "Create new channel", new_channel_path, class: "btn btn-primary"

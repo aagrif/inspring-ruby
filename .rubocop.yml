@@ -1,0 +1,263 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
+  Exclude:
+    - 'coverage/**/*'
+    - 'config/initializers/rails_admin.rb'
+    - 'db/**/*'
+
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+
+# Do not use braces for hash literals when they are the last argument of a
+# method call.
+Style/BracesAroundHashParameters:
+  Enabled: true
+
+# Align `when` with `end` in `case` statements.
+Style/CaseIndentation:
+  Enabled: true
+  IndentWhenRelativeTo: end
+
+# No extra empty lines.
+Style/EmptyLines:
+  Enabled: true
+
+# In a regular class definition, no empty lines around the body.
+Style/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# In a regular module definition, no empty lines around the body.
+Style/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+# Also prefer { :a => 1, 'b' => 2 } over { a: 1, 'b' => 2 }.
+Style/HashSyntax:
+  Enabled: true
+  EnforcedStyle: ruby19_no_mixed_keys
+
+# Indent private/protected/public as deep as method definitions.
+Style/AccessModifierIndentation:
+  Enabled: true
+
+# Method definitions after `private` or `protected` isolated calls need one
+# extra level of indentation.
+Style/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: rails
+
+# Two spaces, no tabs (for indentation).
+Style/IndentationWidth:
+  Enabled: true
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
+# Use `foo {}`, not `foo{}`.
+Style/SpaceBeforeBlockBraces:
+  Enabled: true
+
+# Use `foo { bar }`, not `foo {bar}`.
+Style/SpaceInsideBlockBraces:
+  Enabled: true
+
+# Use `{ a: 1 }`, not `{a:1}`.
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+# Detect hard tabs, no hard tabs.
+Style/Tab:
+  Enabled: true
+
+# Blank lines should not have any spaces.
+Style/TrailingBlankLines:
+  Enabled: true
+
+# No trailing whitespace.
+Style/TrailingWhitespace:
+  Enabled: true
+
+# Use quotes for string literals when they are enough.
+Style/UnneededPercentQ:
+  Enabled: true
+
+# Align the elements of a hash literal if they span more than one line.
+Style/AlignHash:
+  Enabled: true
+
+# Align parameters in multi-line method calls.
+Style/AlignParameters:
+  Enabled: true
+
+# Enforce braces around single line blocks and do..end for multi-line blocks,
+# except for multi-line blocks whose return value is being chained with
+# another method (in which case braces are enforced).
+Style/BlockDelimiters:
+  Enabled: true
+  EnforcedStyle: braces_for_chaining
+
+# Prefer `map`, `map!`, `reduce`, `find` and `select` over `collect`,
+# `collect!`, `inject`, `detect` and `find_all`.
+Style/CollectionMethods:
+  Enabled: true
+
+# Multi-line method chaining should be done with leading dots.
+Style/DotPosition:
+  Enabled: true
+
+# Warn on empty else statments.
+Style/EmptyElse:
+  Enabled: true
+
+# Require a new line at the end of file.
+Style/TrailingBlankLines:
+  Enabled: true
+
+# Require comma after the last argument, but only for parenthesized method 
+# calls where each argument is on its own line.
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+# Require comma after the last item in an array or hash, but only when each
+# item is on its own line.
+Style/TrailingCommaInLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+# Prefer `{}.each { |x, y| puts x }` over `{}.each { | x, y |puts x }`.
+Style/SpaceAroundBlockParameters:
+  Enabled: true
+
+# Prefer `def foo(a, b = 3)` over `def foo(a, b=3)`.
+Style/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+# Check that operators have space around them, except for ** which should
+# not have surrounding space.
+Style/SpaceAroundOperators:
+  Enabled: true
+
+# Prefer `{}.each {}` over `{}.each{}`.
+Style/SpaceBeforeBlockBraces:
+  Enabled: true
+
+# Prefer `{}.each { |e| puts e }` over `{}.each {|e| puts e}`.
+Style/SpaceInsideBlockBraces:
+  Enabled: true
+
+# Prefer `{ a: 1, b: 2 }` over `{a: 1, b: 2}`.
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+# Prefer `#{s}` over `#{ s }`.
+Style/SpaceInsideStringInterpolation:
+  Enabled: true
+
+# Prefer %i over [] for an array of symbols.
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: percent
+
+# Prefer %w over [] for an array of word-like strings.
+Style/WordArray:
+  Enabled: true
+
+# bad
+# ```
+# if foo
+#   bar = 1
+# else
+#   bar = 2
+# end
+# ```
+# 
+# good
+# ```
+# bar = if foo
+#   1
+# else
+#   2
+# end
+# ```
+# The same applies for `case` statements.
+Style/ConditionalAssignment:
+  Enabled: true
+
+# Opening and ending braces are symmetric.
+Style/MultilineArrayBraceLayout:
+  Enabled: true
+
+# Opening and ending braces are symmetric.
+Style/MultilineHashBraceLayout:
+  Enabled: true
+
+# Opening and ending braces are symmetric.
+Style/MultilineMethodCallBraceLayout:
+  Enabled: true
+
+# Opening and ending braces are symmetric.
+Style/MultilineMethodDefinitionBraceLayout:
+  Enabled: true
+
+# Prefer 12_345_678 over 12345678.
+Style/NumericLiterals:
+  Enabled: true
+
+# Use 0x, 0o, 0b for hex, octals, and binaries.
+Style/NumericLiteralPrefix:
+  Enabled: true
+
+# Disables this cop due to undesirable behavior.
+Style/OptionHash:
+  Enabled: false
+
+# Prefer `raise Exception, msg` over `raise Exception.new(msg)`.
+Style/RaiseArgs:
+  Enabled: true
+
+# Prefer slashes for regexp.
+Style/RegexpLiteral:
+  Enabled: true
+
+# Use |a, e| for single line `reduce`, `inject` blocks args.
+Style/SingleLineBlockParams:
+  Enabled: true
+
+# Do not use single-line method definitions, except single-line methods with
+# no body.
+Style/SingleLineMethods:
+  Enabled: true
+
+# Assignments, Branches, and Conditions
+# Metrics/AbcSize:
+#   Enabled: true
+#   Max: 20
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Lint/EndAlignment:
+  Enabled: true
+  AlignWith: variable
+
+# Use my_method(my_arg), not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
+
+# Checks for unused block arguments.
+Lint/UnusedBlockArgument:
+  Enabled: true
+
+# Checks for unused method arguments.
+Lint/UnusedMethodArgument:
+  Enabled: true

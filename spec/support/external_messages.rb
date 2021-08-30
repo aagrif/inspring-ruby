@@ -1,0 +1,2 @@
+module ExternalMessages
+end

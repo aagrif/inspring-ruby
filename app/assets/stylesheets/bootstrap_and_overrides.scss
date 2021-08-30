@@ -1,0 +1,51 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 60px;
+}
+
+.page-header {
+  margin: 20px 0 30px;
+}
+
+.navbar-brand {
+  margin-top: -10px;
+}
+
+.notification-well {
+  text-align: center;
+  
+  .icon {
+    font-size: 60px;
+    color: #ccc;
+  }
+}
+
+#top-menu {
+  background-color: #337ab7;
+  color: #fff;
+
+  #app-navbar {
+    ul {
+      li {
+        a {
+          color: #fff;
+          text-transform: uppercase;
+        }
+
+        a:hover {
+          color: #eee;
+        }
+      }
+    }
+  }
+}
+
+.select2-container--bootstrap {
+  display: inline-block !important;
+}
+
+.form-group .select2-container {
+  width: 100% !important;
+}
